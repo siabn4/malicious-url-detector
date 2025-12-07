@@ -1,0 +1,41 @@
+# DATASET EXPLANATION
+# --------------------
+# This dataset contains 20 total URLs used to train a malicious URL classification model.
+# There are two classes:
+# - "benign": Safe, legitimate URLs
+# - "malicious": URLs containing typical phishing or scam characteristics
+
+# benign examples (safe websites)
+# - https://google.com               (major trusted search engine)
+# - https://youtube.com              (trusted platform)
+# - https://github.com               (developer website)
+# - https://docs.python.org          (official documentation)
+# - https://www.microsoft.com        (trusted corporation)
+# - https://facebook.com             (trusted platform)
+# - https://wikipedia.org            (trusted information site)
+# - https://netflix.com              (trusted streaming site)
+# - https://amazon.com               (trusted shopping platform)
+# - https://apple.com                (trusted technology company)
+# - https://example.com              (standard example domain used for testing)
+
+# malicious examples (phishing-like patterns)
+# - http://update-account-login.com                 (contains "update" + "login")
+
+# - http://freegiftcard-secure-login.net            (contains "free" + "secure" + "login")
+# - http://verify-your-bank-now.xyz                 (contains "verify" + bank impersonation)
+# - http://paypal-security-alert-login.com          (brand impersonation + "alert")
+# - http://cheap-medications-online.ru              (.ru domain often used in scams)
+# - http://secure-update-paypal-alert.net           (multiple phishing keywords)
+# - http://malicious-domain-phishing-login.com      (contains "phishing")
+# - http://verifyinformation-login-now.info         (contains "verify" + "login")
+# - http://bank-update-secure-alert.co              (financial impersonation)
+# - http://freegiftcard-secure-login.net            (fake giveaways + login request)
+
+# Feature patterns chosen for this dataset:
+# - Legitimate sites use HTTPS, simple structure, and known domains.
+# - Malicious URLs often include:
+#       * suspicious keywords (login, verify, secure, update, free)
+#       * multiple hyphens
+#       * HTTP instead of HTTPS
+#       * strange TLDs (.xyz, .info, .ru)
+#       * bank or financial impersonation
